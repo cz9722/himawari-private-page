@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Small Diary...? — Redesign Dawn V3</title>
+    <link rel="stylesheet" href="styles-redesign-dawn-v3.css" />
+  </head>
+  <body>
+    <div class="password-gate" id="passwordGate">
+      <div class="password-card">
+        <p class="password-kicker">private page</p>
+        <h2>Enter password</h2>
+        <p class="password-note">This page was made for someone specific.</p>
+        <form class="password-form" id="passwordForm">
+          <input type="password" id="passwordInput" placeholder="Password" autocomplete="off" />
+          <button type="submit" class="primary-btn">Open</button>
+        </form>
+        <p class="password-error" id="passwordError">Wrong password.</p>
+      </div>
+    </div>
+
+    <div class="bg-base"></div>
+    <div class="bg-orbs"></div>
+    <div class="bg-grid"></div>
+    <div class="spark-layer" id="sparkLayer" aria-hidden="true"></div>
+    <div class="cinema-vignette"></div>
+    <div class="film-grain"></div>
+    <div class="reading-progress"><span id="readingBar"></span></div>
+
+    <header class="hero section" id="hero">
+      <div class="hero-inner reveal reveal-delay-1">
+        <p class="eyebrow">🌻 ひまわり</p>
+        <h1>A Small Diary...?</h1>
+        <p class="subtext">
+          Never created a web page in my life, so don't judge!
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="enterBtn">Open it</button>
+          <button class="ghost-btn" id="scrollHintBtn">Or you can click this</button>
+        </div>
+      </div>
+
+      <div class="hero-audio reveal reveal-delay-2">
+        <p class="audio-label">Luther.mp3</p>
+        <audio controls preload="auto" autoplay id="bgAudio">
+          <source src="Luther.mp3" type="audio/mpeg" />
+          你的浏览器不支持音频播放。
+        </audio>
+      </div>
+
+      <div class="hero-scroll-cue reveal reveal-delay-2" aria-hidden="true">
+        <span class="cue-line"></span>
+        <span class="cue-dot"></span>
+      </div>
+
+      <div class="hero-frame reveal reveal-delay-2" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </div>
+
+      <button class="status-dot" id="statusDot" aria-label="查看状态">
+        <span class="status-light"></span>
+        <span class="status-text">I'M HERE</span>
+      </button>
+    </header>
+
+    <main id="mainContent">
+      <section class="section intro-note reveal" id="introNote">
+        <p>
+          Here are something that I've been wanting to tell.(Maybe you can see this as a reading practice for TOEFL!)
+        </p>
+      </section>
+
+      <section class="section structure-section letter-stage reveal" id="letterSection">
+        <div class="section-head">
+          <span class="section-kicker">page two</span>
+          <h2>RANDOM SHIT</h2>
+          <p>a few thoughts</p>
+        </div>
+
+        <article class="poem-block poem-center reveal reveal-delay-1" data-tone="soft">
+          <span class="corner-star"></span>
+          <p>Sometimes I want to keep my distance from people,</p>
+          <p>so I do not have to pretend,</p>
+          <p>so I can live on without showing fake care,</p>
+          <p>and simply be myself.</p>
+        </article>
+
+        <article class="poem-block poem-center reveal" data-tone="soft">
+          <span class="corner-star"></span>
+          <p>I never thought that would change.</p>
+          <p>Then you arrived,</p>
+          <p>and somehow your presence</p>
+          <p>could make the room feel lighter.</p>
+        </article>
+
+        <article class="poem-block poem-center reveal" data-tone="soft">
+          <span class="corner-star"></span>
+          <p>In my everyday life—</p>
+          <p>smiling eyes,</p>
+          <p>a "good morning",</p>
+          <p>a small talk—</p>
+          <p>those would make my day.</p>
+        </article>
+      </section>
+
+      <section class="section structure-section fragment-stage reveal" id="fragmentSection">
+        <div class="section-head">
+          <span class="section-kicker">page three</span>
+          <h2>Little fragments</h2>
+        </div>
+
+        <p class="fragment-intro">Click them if you want. They open one by one.</p>
+
+        <div class="fragment-actions">
+          <button class="fragment-toggle" type="button" data-target="fragment-1">Fragment I</button>
+          <button class="fragment-toggle" type="button" data-target="fragment-2">Fragment II</button>
+          <button class="fragment-toggle" type="button" data-target="fragment-3">Fragment III</button>
+          <button class="fragment-toggle" type="button" data-target="fragment-4">Fragment IV</button>
+          <button class="fragment-toggle" type="button" data-target="fragment-5">Fragment V</button>
+          <button class="fragment-toggle" type="button" data-target="fragment-6">Fragment VI</button>
+        </div>
+
+        <article class="poem-block poem-left reveal accent-block fragment-piece is-collapsed" id="fragment-1" data-tone="warm">
+          <span class="corner-star"></span>
+          <span class="fragment-label">fragment I</span>
+          <p class="fragment-preview">Feelings</p>
+          <div class="fragment-content">
+            <p>Frankly, it was odd to me</p>
+            <p>that one person can alter the air like this.</p>
+            <p>Maybe it does not make sense.</p>
+            <p>Maybe it does not have to...</p>
+          </div>
+        </article>
+
+        <article class="poem-block poem-right reveal split-block fragment-piece is-collapsed" id="fragment-2" data-tone="warm">
+          <span class="corner-star"></span>
+          <span class="fragment-label">fragment II</span>
+          <p class="fragment-preview">Impression</p>
+          <div class="fragment-content">
+            <p>At first, I was drawn by this weird sense of familiarity of you.</p>
+            <p>Then I realized-</p>
+            <p>I want more than just knowing you.</p>
+            <p>I want to be with you.</p>
+          </div>
+        </article>
+
+        <article class="poem-block poem-center reveal question-block fragment-piece is-collapsed" id="fragment-3" data-tone="violet">
+          <span class="corner-star"></span>
+          <span class="fragment-label">fragment III</span>
+          <p class="fragment-preview">Questions</p>
+          <div class="fragment-content">
+            <p>Every time I see you,</p>
+            <p>the questions I meant to ask slip away from my head.</p>
+            <p>...</p>
+            <p>What have you gone through in your life,</p>
+            <p>and what have you done with it?</p>
+            <p>What is your favorite color?</p>
+            <p>What brings you joy?</p>
+            <p>What makes your anger rise?</p>
+            <p>What thoughts keep you awake at night?</p>
+            <p>And when I appear in your mind,</p>
+            <p>what do you think of?</p>
+            <p>What is it like to walk with you in the rain?</p>
+            <p>...</p>
+          </div>
+        </article>
+
+        <article class="poem-block poem-left reveal fragment-piece is-collapsed" id="fragment-4" data-tone="soft">
+          <span class="corner-star"></span>
+          <span class="fragment-label">fragment IV</span>
+          <p class="fragment-preview">Seize the moment...</p>
+          <div class="fragment-content">
+            <p>The questions that</p>
+            <p>I wanna ask seem endless.</p>
+            <p>But I don't know</p>
+            <p>where to begin,</p>
+            <p>or how to ask at all.</p>
+            <p>Because one of my traits</p>
+            <p>is that I always seek for</p>
+            <p>the perfect timing to do things.</p>
+          </div>
+        </article>
+
+        <article class="poem-block poem-right reveal accent-block warm-block fragment-piece is-collapsed" id="fragment-5" data-tone="ember">
+          <span class="corner-star"></span>
+          <span class="fragment-label">fragment V</span>
+          <p class="fragment-preview">My phobia</p>
+          <div class="fragment-content">
+            <p>Maybe I was afraid</p>
+            <p>of fucking up our relationship</p>
+            <p>since the second I recognized my feelings.</p>
+            <p>Maybe that is why</p>
+            <p>Sometimes I suddenly became shy.</p>
+            <p>And yet, the more I learn about you,</p>
+            <p>the more comfortable I feel</p>
+            <p>when I'm around you.</p>
+          </div>
+        </article>
+
+        <article class="poem-block poem-center reveal dream-block fragment-piece is-collapsed" id="fragment-6" data-tone="dream">
+          <span class="corner-star"></span>
+          <span class="fragment-label">fragment VI</span>
+          <p class="fragment-preview">Dreams</p>
+          <div class="fragment-content">
+            <p>Since the new year,</p>
+            <p>you have been appearing in my dreams</p>
+            <p>more and more often.</p>
+            <p>Sometimes you seem sad there,</p>
+            <p>and I do what I can</p>
+            <p>to make you smile.</p>
+            <p>You remember the dream of valley that</p>
+            <p>you were in?</p>
+            <p>First colorful dream for me!</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section structure-section final-stage reveal" id="finalSection">
+        <div class="section-head">
+          <span class="section-kicker">last page</span>
+          <h2>I like philosophy shit.</h2>
+          <p>Tried to make this part a poem but...</p>
+        </div>
+
+        <article class="poem-block poem-left reveal" data-tone="soft">
+          <span class="corner-star"></span>
+          <p>It may sound simple, even cliché</p>
+          <p>but I wish you could be happy</p>
+        </article>
+
+        <article class="poem-block poem-right reveal" data-tone="soft">
+          <span class="corner-star"></span>
+          <p>I wish I could drive away your gloom</p>
+          <p>the way you drove away mine</p>
+        </article>
+
+        <article class="poem-block poem-left reveal" data-tone="soft">
+          <span class="corner-star"></span>
+          <p>You once asked me</p>
+          <p>why do people go after love</p>
+          <p>I still do not have an answer</p>
+          <p>and I do not think it should have one</p>
+        </article>
+
+        <article class="poem-block poem-center reveal final-rise" data-tone="gold">
+          <span class="corner-star"></span>
+          <p>But maybe for me</p>
+          <p>it is this</p>
+          <p>when I am with you</p>
+          <p>or when you are in my thoughts</p>
+          <p>I feel happier</p>
+          <p>I feel more alive</p>
+          <p>I wonder around</p>
+        </article>
+
+        <article class="poem-block poem-right reveal tango-block" data-tone="ember">
+          <span class="corner-star"></span>
+          <p>We are like dancers in a midnight tango</p>
+          <p>each with our own steps</p>
+          <p>our own rhythm</p>
+          <p>our own hesitation</p>
+          <p>You showed me your pace</p>
+          <p>I'll try to follow</p>
+        </article>
+
+        <article class="poem-block poem-center reveal closing-block" data-tone="gold">
+          <span class="corner-star"></span>
+          <p>I’ve always wanted to thank you</p>
+          <p>but chinese always make the scene feel awkward</p>
+          <p>What I mean is thank you for coming into my life</p>
+          <p>quietly lighting up the dull and heavy days I once had</p>
+          <p>I hope we can create more memories in the future</p>
+          <p class="hidden-important" id="hiddenImportant">　</p>
+        </article>
+      </section>
+
+      <section class="section postscript reveal">
+        <div class="postscript-line"></div>
+        <div class="closing-halo" aria-hidden="true"></div>
+        <p class="ps-line">(PS: I don’t mean to be very dramatic about this, if you find it that way…)</p>
+        <p class="ps-line">すまん、俺は純愛戦神だからーー</p>
+        <button class="ghost-btn ending-btn" id="endingBtn">One more line</button>
+        <p class="ending-line" id="endingLine"></p>
+      </section>
+    </main>
+
+    <script src="script-redesign-dawn-v3.js"></script>
+  </body>
+</html>
